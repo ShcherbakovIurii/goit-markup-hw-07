@@ -11,13 +11,17 @@
   opacity: 1;
   transition: opacity 250ms var(--transition-timing-function),
     visibility 250ms var(--transition-timing-function);
-}
 
-.backdrop.is-hidden {
+&.is-hidden {
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
 }
+
+&.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(1.2);
+}
+  }
 
 .modal {
   position: absolute;
@@ -38,10 +42,6 @@
   transition: transform 250ms var(--transition-timing-function);
 }
 
-.backdrop.is-hidden .modal {
-  transform: translate(-50%, -50%) scale(1.2);
-}
-
 .modal__button {
   position: absolute;
   top: 8px;
@@ -57,11 +57,11 @@
   border: 1px solid var(--button-close-border);
   border-radius: 50%;
   transition: fill 250ms var(--transition-timing-function);
-}
 
-.modal__button:hover,
-.modal__button:focus {
+&:hover,
+&:focus {
   fill: var(--accent-color);
+}
 }
 
 /* Form */
@@ -89,6 +89,10 @@
 
 .form__control {
   position: relative;
+
+  &:focus-within .form__icon {
+  fill: var(--accent-color);
+}
 }
 
 .form__input {
@@ -100,10 +104,10 @@
   border-radius: 4px;
   outline: none;
   transition: border-color 250ms var(--transition-timing-function);
-}
 
-.form__input:focus {
+  &:focus {
   border-color: var(--accent-color);
+}
 }
 
 .form__icon {
@@ -114,10 +118,6 @@
   transform: translateY(-50%);
   fill: currentcolor;
   transition: fill 250ms var(--transition-timing-function);
-}
-
-.form__control:focus-within .form__icon {
-  fill: var(--accent-color);
 }
 
 .form__textarea {
@@ -136,14 +136,14 @@
   resize: none;
 
   transition: border-color 250ms var(--transition-timing-function);
-}
 
-.form__textarea::placeholder {
+&::placeholder {
   color: var(--comment-text-color);
 }
 
-.form__textarea:focus {
+&:focus {
   border-color: var(--accent-color);
+}
 }
 
 /* Checkbox */
@@ -155,6 +155,11 @@
 
 .checkbox__input {
   appearance: none;
+
+  &:checked + .checkbox__icon {
+  border: none;
+  fill-opacity: 1;
+}
 }
 
 .checkbox__label {
@@ -181,11 +186,6 @@
   transform: translateY(-50%);
   border: 2px solid var(--title-text-color);
   border-radius: 2px;
-}
-
-.checkbox__input:checked + .checkbox__icon {
-  border: none;
-  fill-opacity: 1;
 }
 
 /* Form button */

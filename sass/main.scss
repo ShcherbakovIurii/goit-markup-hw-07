@@ -1,8 +1,7 @@
+@import "./vendors/normalize";
+@import "./utils/main";
 
-@import './vendors/normalise';
-@import './utils/main';
+@import "./base/main";
+@import "./layout/main";
 
-@import './base/main';
-@import './layout/main';
-
-@import './components/main';
+@import "./components/main";
