@@ -1,19 +1,18 @@
 .header {
   background-color: var(--primary-white-color);
   border-bottom: 1px solid var(--border-header);
-}
 
-.header__main {
+  &__main {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.header__logo {
+&__logo {
   margin-right: 93px;
 }
 
-.header__link {
+&__link {
   color: var(--accent-color);
   font-family: Raleway, cursive;
   font-size: 26px;
@@ -28,7 +27,7 @@
 }
 }
 
-.header__special {
+&__special {
   color: var(--title-text-color);
   font-family: Raleway, cursive;
   font-size: 26px;
@@ -41,6 +40,7 @@
   color: var(--accent-color);
 }
 }
+}
 
 .nav {
   display: flex;
@@ -50,14 +50,12 @@
   line-height: 1.14;
   letter-spacing: 0.02em;
   list-style: none;
-}
 
-.nav__item + .nav__item {
+  &__item + &__item {
   margin-left: 50px;
 }
 
-.nav__link,
-.aside__link {
+&__link {
   display: flex;
   align-items: center;
   padding-top: 32px;
@@ -77,7 +75,7 @@
 }
 }
 
-.nav__link--current {
+&__link--current {
   color: var(--accent-color);
 
   &::after {
@@ -93,6 +91,9 @@
   border-radius: 2px;
 }
 }
+}
+
+
 
 .aside {
   display: flex;
@@ -102,12 +103,32 @@
   line-height: 1.14;
   letter-spacing: 0.02em;
   list-style: none;
-}
 
-.aside__item + .aside__item {
+  &__item + &__item {
   margin-left: 30px;
 }
 
-.aside__icon {
+&__link {
+  display: flex;
+  align-items: center;
+  padding-top: 32px;
+  padding-bottom: 31px;
+  gap: 10px;
+  color: var(--title-text-color);
+  text-decoration: none;
+  position: relative;
+  transition: color 250ms var(--transition-timing-function);
+
+&:hover,
+&:focus {
+  color: var(--accent-color);
+}
+&:hover svg {
+  fill: var(--accent-color);
+}
+}
+
+&__icon {
   transition: fill 250ms var(--transition-timing-function);
+}
 }

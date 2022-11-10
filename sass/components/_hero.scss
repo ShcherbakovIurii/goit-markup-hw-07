@@ -9,9 +9,8 @@
       var(--gradient-hero-color)
     ),
     url(../img/hero.png);
-}
 
-.hero__title {
+    &__title {
   margin: 0 auto 30px;
   max-width: 696px;
 
@@ -24,3 +23,5 @@
   text-transform: uppercase;
   text-align: center;
 }
+}
+
